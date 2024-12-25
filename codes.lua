@@ -14,3 +14,21 @@ end
 print("Contents of " .. filename .. ":")
 print(file:read("*all"))
 file:close()
+
+-- Open a file in write mode ("w")
+local file, err = io.open("example.txt", "w")
+
+-- Check if the file was successfully opened
+if not file then
+    print("Error opening file: " .. err)
+    return
+end
+
+-- Write data to the file
+file:write("Hello, Lua!\n")
+file:write("This is a new file.\n")
+
+-- Close the file to save changes
+file:close()
+
+print("File created and written successfully!")
